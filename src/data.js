@@ -64,3 +64,4 @@ const menu = [
     desc: "Fresh strawberry milkshake made creamy and smooth with real berries in every sweet sip.",
   },
 ];
+export default menu;

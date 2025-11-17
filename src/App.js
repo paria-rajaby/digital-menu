@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import { useState } from "react";
+import "./App.css";
+import menu from "./data";
+import Categories from "./Components/Categories";
 
 function App() {
+  const allCategories = ["All", ...new Set(menu.map((item) => item.category))];
+  const [allMenu, setAllMenu] = useState(menu);
+  const [categories, setCategories] = useState(allCategories);
+
+  console.log(categories);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <section>
+        <h1 className="menuTitle">Digital Menu</h1>
+        <span className="line"></span>
+      </section>
+      <section>
+        <Categories categories={categories}></Categories>
+      </section>
+    </>
   );
 }
 
