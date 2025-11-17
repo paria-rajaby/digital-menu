@@ -1,15 +1,21 @@
-import logo from "./logo.svg";
 import { useState } from "react";
 import "./App.css";
 import menu from "./data";
-import Categories from "./Components/Categories";
+import Categories from "./Components/Categories/Categories";
+import Menus from "./Components/Menus/Menus";
 
 function App() {
   const allCategories = ["All", ...new Set(menu.map((item) => item.category))];
   const [allMenu, setAllMenu] = useState(menu);
   const [categories, setCategories] = useState(allCategories);
-
-  console.log(categories);
+  const selectCategory = (category) => {
+    if (category == "All") {
+      setAllMenu(menu);
+      return;
+    }
+    let filterItems = menu.filter((item) => item.category === category);
+    setAllMenu(filterItems);
+  };
   return (
     <>
       <section>
@@ -17,7 +23,13 @@ function App() {
         <span className="line"></span>
       </section>
       <section>
-        <Categories categories={categories}></Categories>
+        <Categories
+          categories={categories}
+          selectCategory={selectCategory}
+        ></Categories>
+      </section>
+      <section>
+        <Menus allMenu={allMenu}></Menus>
       </section>
     </>
   );

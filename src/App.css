@@ -1,3 +1,7 @@
+:root{
+    --main-color : #b08968;
+}
+
 .menuTitle{
   margin-top: 50px;
   text-align: center;
@@ -6,7 +10,7 @@
     height: 4px;
     width: 150px;
     display: block;
-    background-color: red;
+    background-color: var(--main-color);
     border-radius: 81px;
     margin: 0 auto;
 }

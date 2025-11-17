@@ -1,0 +1,30 @@
+
+.menusWrapper{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    padding: 100px;
+    gap :50px;
+}
+.menuItemWrapper{
+    display: flex;
+    gap: 20px;
+}
+img{
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid var(--main-color);
+    border-radius: 10px;
+}
+.menuItemInfos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-color);
+}
+.menuItemInfos_price{
+    color: var(--main-color);
+}
+.menuItemDesc{
+    margin-top: 20px;
+}
