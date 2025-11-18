@@ -1,7 +1,7 @@
 import React from "react";
 import "./Menus.css";
 
-export default function Menus({ allMenu }) {
+export default function Menus({ allMenu, selectItem }) {
   return (
     <div className="menusWrapper">
       {allMenu.map((menu) => (
@@ -13,6 +13,9 @@ export default function Menus({ allMenu }) {
               <span className="menuItemInfos_price">{menu.price}$</span>
             </div>
             <div className="menuItemDesc">{menu.desc}</div>
+            <button onClick={() => selectItem(menu.title)} className="orderBtn">
+              Order
+            </button>
           </div>
         </div>
       ))}
